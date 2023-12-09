@@ -46,15 +46,14 @@ except:
 '''
 #在 try 语句中判断文件是否可以打开，如果打开文件时正常的没有发生异常则执行 else 部分的语句
 '''
-import sys
-for arg in sys.argv[1:]:#sys.argv[]获取命令行参数，从索引1到最后
-    try:
-        f=open(arg,'r')
-    except IOError:
-        print('cannot open',arg)
-    else:
-        print(arg,'has',len(f.readlines()),'lines')
-        f.close()
+
+try:
+     f=open('e.txt','r')
+except IOError:
+    print('cannot open',arg)
+else:
+     print('has',len(f.readlines()),'lines')
+     f.close()
 '''
 #异常处理并不仅仅处理那些直接发生在 try 子句中的异常，而且还能处理子句中调用的函数（甚至间接调用的函数）里抛出的异常。
 '''
