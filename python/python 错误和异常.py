@@ -145,8 +145,9 @@ import traceback
 try:
     1/0
 except Exception as e:
-    traceback.print_exc(file=open('e.txt','w+',encoding='utf-8'))
-    #print_exc打印具体的异常信息，并将异常信息写入到e.txt文件
+    traceback.print_exc(file=open('e.txt','w+',encoding='utf-8')) #print_exc打印具体的异常信息，并将异常信息写入到e.txt文件
+    print(traceback.format_exc()) #format_exc()打印异常信息，返回一个字符串类型的错误信息
+    
 '''
 #raise主动触发异常
 '''
@@ -159,15 +160,8 @@ def not_zero(num):
         print(e)
 not_zero(0)
 '''
-#format_exc()打印异常信息，返回一个字符串类型的错误信息
-'''
-import traceback
-try:
-    import c
-except:
-    i=traceback.format_exc()
-    print(i)
-'''
+
+
 #自定义上下文管理器
 '''
 class Test:
